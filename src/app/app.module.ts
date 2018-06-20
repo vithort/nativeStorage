@@ -6,25 +6,32 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { BancoProvider } from '../providers/banco/banco';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    MyApp
+    ,HomePage
   ],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
+    BrowserModule
+    ,IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    MyApp
+    ,HomePage
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ,StatusBar
+    ,SplashScreen
+    ,{
+      provide: ErrorHandler
+      ,useClass: IonicErrorHandler
+    }
+    ,BancoProvider
+    ,NativeStorage
   ]
 })
 export class AppModule {}
